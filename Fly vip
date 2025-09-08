@@ -1,0 +1,59 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local flying = false
+local speed = 50
+
+-- Tạo GUI
+local screenGui = Instance.new("ScreenGui", player.PlayerGui)
+screenGui.Name = "FlyToggleGUI"
+
+local toggleButton = Instance.new("TextButton", screenGui)
+toggleButton.Size = UDim2.new(0, 100, 0, 50)
+toggleButton.Position = UDim2.new(0.5, -50, 0.8, 0)
+toggleButton.Text = "Fly: OFF"
+toggleButton.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+toggleButton.TextScaled = true
+
+-- Hàm Fly
+local bodyGyro = Instance.new("BodyGyro")
+local bodyVelocity = Instance.new("BodyVelocity")
+
+function startFlying()
+    flying = true
+    toggleButton.Text = "Fly: ON"
+    toggleButton.BackgroundColor3 = Color3.fromRGB(85, 255, 85)
+
+    bodyGyro.Parent = humanoidRootPart
+    bodyGyro.MaxTorque = Vector3.new(400000,400000,400000)
+    bodyGyro.P = 10000
+    bodyGyro.CFrame = humanoidRootPart.CFrame
+
+    bodyVelocity.Parent = humanoidRootPart
+    bodyVelocity.Velocity = Vector3.new(0,0,0)
+    bodyVelocity.MaxForce = Vector3.new(400000,400000,400000)
+
+    -- Di chuyển theo hướng camera khi bay
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if flying then
+            bodyGyro.CFrame = workspace.CurrentCamera.CFrame
+            bodyVelocity.Velocity = workspace.CurrentCamera.CFrame.lookVector * speed
+        end
+    end)
+end
+
+function stopFlying()
+    flying = false
+    toggleButton.Text = "Fly: OFF"
+    toggleButton.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
+    bodyGyro.Parent = nil
+    bodyVelocity.Parent = nil
+end
+
+toggleButton.MouseButton1Click:Connect(function()
+    if flying then
+        stopFlying()
+    else
+        startFlying()
+    end
+end)
