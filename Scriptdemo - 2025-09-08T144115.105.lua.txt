@@ -64,3 +64,10 @@ AddButton(Tab1o, {
 loadstring(game:HttpGet("https://pastefy.app/SGUJ4woe/raw"))()
 end
 })
+AddButton(Tab1o, {
+     Name = "vip quá",
+    Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/53325754de16c11fbf8bf78101c1c881.lua"))()
+end
+})
+
