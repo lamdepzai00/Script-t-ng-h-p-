@@ -58,3 +58,9 @@ AddButton(Tab1o, {
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ninja10908/S4/refs/heads/main/Kurdhub"))()
 end
 })
+AddButton(Tab1o, {
+     Name = "tàng hình+ chạy nhanh",
+    Callback = function()
+loadstring(game:HttpGet("https://pastefy.app/SGUJ4woe/raw"))()
+end
+})
