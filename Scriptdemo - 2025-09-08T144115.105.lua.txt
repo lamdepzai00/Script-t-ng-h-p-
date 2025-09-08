@@ -2,15 +2,15 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 
        local Window = MakeWindow({
          Hub = {
-         Title = "lâm đẹp zai",
-         Animation = "tik tok ; lm.n232"
+         Title = "×͜×łâɱ✿đẹρ✿ʑɑɨ࿐",
+         Animation = "𝚝𝚒𝚔 𝚝𝚘𝚔; 𝚕𝚖.𝚗𝟸𝟹𝟸"
          },
         Key = {
         KeySystem = false,
         Title = "Key System",
         Description = "",
-        KeyLink = "",
-        Keys = {"1234"},
+        KeyLink = "https://www.tiktok.com/@lm.n232?_t=ZS-8zYouILI7MO&_r=1",
+        Keys = {"0000"},
         Notifi = {
         Notifications = true,
         CorrectKey = "Running the Script...",
@@ -31,6 +31,8 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
       
 ------ Tab
      local Tab1o = MakeTab({Name = "Script steal a brenrot"})
+     local Tab2o = MakeTab({Name = "script vui"})
+
      
 ------- BUTTON
     
@@ -68,6 +70,12 @@ AddButton(Tab1o, {
      Name = "vip quá",
     Callback = function()
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/53325754de16c11fbf8bf78101c1c881.lua"))()
+end
+})
+AddButton(Tab1o, {
+     Name = "thử đi rồi biết",
+    Callback = function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/soxcy-script/d71b1a3947568c9f97920fa8e746ca15/raw", true))()
 end
 })
 
