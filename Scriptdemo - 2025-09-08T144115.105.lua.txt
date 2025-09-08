@@ -59,7 +59,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Ninja10908/S4/refs/he
 end
 })
 AddButton(Tab1o, {
-     Name = "tàng hình+ chạy nhanh",
+     Name = "bay về nhà",
     Callback = function()
 loadstring(game:HttpGet("https://pastefy.app/SGUJ4woe/raw"))()
 end
