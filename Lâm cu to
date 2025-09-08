@@ -1,0 +1,75 @@
+-- Flying Script for Roblox
+-- Place this LocalScript in StarterPlayerScripts or StarterCharacterScripts
+
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local flying = false
+local speed = 50
+local bodyGyro = nil
+local bodyVelocity = nil
+
+function fly()
+    local character = player.Character
+    if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+
+    flying = true
+
+    bodyGyro = Instance.new("BodyGyro")
+    bodyGyro.P = 9e4
+    bodyGyro.Parent = character.HumanoidRootPart
+
+    bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.Velocity = Vector3.new(0,0,0)
+    bodyVelocity.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+    bodyVelocity.Parent = character.HumanoidRootPart
+
+    while flying do
+        local moveDirection = Vector3.new(0, 0, 0)
+        if userInput:IsKeyDown(Enum.KeyCode.W) then
+            moveDirection = moveDirection + (workspace.CurrentCamera.CFrame.LookVector)
+        end
+        if userInput:IsKeyDown(Enum.KeyCode.S) then
+            moveDirection = moveDirection - (workspace.CurrentCamera.CFrame.LookVector)
+        end
+        if userInput:IsKeyDown(Enum.KeyCode.A) then
+            moveDirection = moveDirection - (workspace.CurrentCamera.CFrame.RightVector)
+        end
+        if userInput:IsKeyDown(Enum.KeyCode.D) then
+            moveDirection = moveDirection + (workspace.CurrentCamera.CFrame.RightVector)
+        end
+        if userInput:IsKeyDown(Enum.KeyCode.Space) then
+            moveDirection = moveDirection + Vector3.new(0, 1, 0)
+        end
+        if userInput:IsKeyDown(Enum.KeyCode.LeftControl) then
+            moveDirection = moveDirection - Vector3.new(0, 1, 0)
+        end
+
+        bodyVelocity.Velocity = moveDirection.Unit * speed
+        bodyGyro.CFrame = workspace.CurrentCamera.CFrame
+        wait()
+    end
+end
+
+function stopFlying()
+    flying = false
+    if bodyGyro then bodyGyro:Destroy() end
+    if bodyVelocity then bodyVelocity:Destroy() end
+end
+
+local userInput = game:GetService("UserInputService")
+
+userInput.InputBegan:Connect(function(input, processed)
+    if processed then return end
+    if input.KeyCode == Enum.KeyCode.F then
+        if not flying then
+            fly()
+        else
+            stopFlying()
+        end
+    end
+end)
+
+userInput.InputEnded:Connect(function(input, processed)
+    if processed then return end
+    -- No action needed on key up for toggling
+end)
