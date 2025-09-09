@@ -3,7 +3,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
        local Window = MakeWindow({
          Hub = {
          Title = "×͜×łâɱ✿đẹρ✿ʑɑɨ࿐",
-         Animation = "𝚝𝚒𝚔 𝚝𝚘𝚔; 𝚕𝚖.𝚗𝟸𝟹𝟸"
+         Animation = "𝚝𝚒𝚔 𝚝𝚘𝚔; ln.n232"
          },
         Key = {
         KeySystem = false,
@@ -22,7 +22,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 
        MinimizeButton({
        Image = "http://www.roblox.com/asset/?id=11596689454",
-       Size = {60, 60},
+       Size = {50, 60},
        Color = Color3.fromRGB(10, 10, 10),
        Corner = true,
        Stroke = false,
@@ -49,12 +49,6 @@ loadstring(game:HttpGet("https://pastefy.app/SSynaqvm/raw"))()
 end
 })
 AddButton(Tab1o, {
-     Name = "chilli",
-    Callback = function()
-loadstring(game: HttpGet("https://api.luarmor.net/files/v3/loaders/5896f91b3735956f3d9d0727b84fcbe5.lua")) ()
-end
-})
-AddButton(Tab1o, {
      Name = "tìm sv có brenrot xịn",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Ninja10908/S4/refs/heads/main/Kurdhub"))()
@@ -76,6 +70,12 @@ AddButton(Tab1o, {
      Name = "thử đi rồi biết",
     Callback = function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/soxcy-script/d71b1a3947568c9f97920fa8e746ca15/raw", true))()
+end
+})
+AddButton(Tab1o, {
+     Name = "chỉ dành cho admin lâm",
+    Callback = function()
+loadstring(game:HttpGet("https://hackmanhub.pages.dev/loader.txt"))()
 end
 })
 
