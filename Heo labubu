@@ -56,14 +56,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/thunhchk/Thinhlo/refs
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   end
-  })     AddButton(Tab1o, {
-     Name = "lọ vương",
+  })
+
+AddButton(Tab1o, {
+     Name = "fly gun v3",
     Callback = function()
 	  local Settings = {
   JoinTeam = "Pirates"; -- Pirates/Marines
   Translator = true; -- true/false
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/thunhchk/Thinhlo/refs/heads/main/thinhlo.lua"))()
-  end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()  end
   })
