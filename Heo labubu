@@ -92,3 +92,22 @@ AddButton(Tab1o, {
 loadstring(game:HttpGet("https://pastebin.com/raw/3c2ztusw"))()
   end
   })
+
+AddButton(Tab1o, {
+     Name = "chạy nhanh",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+AddButton(Tab1o, {
+     Name = "auto click ",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Auto-clicker-38704"))()  end
+  })
