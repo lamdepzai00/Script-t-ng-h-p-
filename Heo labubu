@@ -94,14 +94,6 @@ loadstring(game:HttpGet("https://pastebin.com/raw/3c2ztusw"))()
   })
 
 AddButton(Tab1o, {
-     Name = "chạy nhanh",
-    Callback = function()
-	  local Settings = {
-  JoinTeam = "Pirates"; -- Pirates/Marines
-  Translator = true; -- true/false
-}
-
-AddButton(Tab1o, {
      Name = "auto click ",
     Callback = function()
 	  local Settings = {
