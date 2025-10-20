@@ -45,3 +45,25 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 loadstring(game:HttpGet("https://raw.githubusercontent.com/thunhchk/Thinhlo/refs/heads/main/thinhlo.lua"))()
   end
   })
+  
+  AddButton(Tab1o, {
+     Name = "IY",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  end
+  })     AddButton(Tab1o, {
+     Name = "lọ vương",
+    Callback = function()
+	  local Settings = {
+  JoinTeam = "Pirates"; -- Pirates/Marines
+  Translator = true; -- true/false
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/thunhchk/Thinhlo/refs/heads/main/thinhlo.lua"))()
+  end
+  })
